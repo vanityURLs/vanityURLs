@@ -1,4 +1,4 @@
-![logo](https://github.com/bhdicaire/vanityURLs/raw/master/doc/logo.png)
+![logo](doc/logo.png)
 
 vanityURLs is a _simple_ solution to deploy a budget-friendly Url Shortener. It runs at scale in your Cloudflare subscription with continuous integration.
 
