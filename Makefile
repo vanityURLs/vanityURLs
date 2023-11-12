@@ -10,6 +10,9 @@ help: ## Show this help.
 url: ## Generate a unique ID for a new URL
 	npx nanoid --size 5
 
+edit: ## Modify the URLs redirection list
+	vi cfPage/_redirects
+
 build: ## GIT add & commit the updated URLs redirection list AND push to github
 	git add cfPages/.
 	git commit -m "Updated URL list"
