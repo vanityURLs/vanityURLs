@@ -7,10 +7,10 @@ vanityURLs is a _simple_ solution to deploy a budget-friendly Url Shortener. It 
 Features:
  * Fully branded internet domain using Cloudflare [DNS](https://www.cloudflare.com/en-ca/application-services/products/dns/) & [Pages](https://pages.cloudflare.com/)
  * URL redirection (301, 302, 303, 307 and 308)
- * Advanced redirection with splats (e.g., /news/* --> /blog/:splat )
+ * Advanced redirection with splats (e.g., /news/*  &#8594; /blog/:splat )
  * Continuous integration managed by Cloudflare Page Engine
 
-My objective is to drive it at the terminal and automate it. So feel free to fork, and customize.
+My objective is to work at the command line and automate it. So feel free to fork, and customize.
 
 ## What problem does it solve and why is it useful?
 
@@ -36,8 +36,8 @@ The code is tested on OS X Ventura and you need only Node.js in the system if yo
 
 You can use `Make`, if this is your cup of tea:
   * url &#8594; Generate a unique ID for a new URL
-  * edit --> Modify the URLs redirection list
-  * build --> GIT add & commit the updated URLs redirection list AND push to github
+  * edit  &#8594; Modify the URLs redirection list
+  * build  &#8594; GIT add & commit the updated URLs redirection list AND push to github
 
 The secret sauce are two plain text files:
   * `cfPage/_redirects` based on this [documentation](https://developers.cloudflare.com/pages/platform/redirects)
@@ -57,7 +57,7 @@ Make sure to put all the items with placeholders or splats at the end of the `cf
 /github/* https://github.com/bhdicaire/:splat
 ```
 
-I'm using the `cfPage/_headers` to include the following items to Cloudflare Pages responses:
+I'm using the `cfPage/_headers` to include the following items to Cloudflare Pages responses, don't forget to change the URLs for pages.dev and your custom domain:
 ```html
 https://xyz.pages.dev/*
   X-Robots-Tag: noindex
@@ -70,7 +70,7 @@ https://example.com/*
 
 ## Everything you always wanted to know about URL redirection (but were afraid to ask)
 
-HTTP is a [protocol](https://developer.mozilla.org/en-US/docs/Web/HTTP/Resources_and_specifications) for fetching resources such as HTML documents. You can [redirect](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Overview) at the service level, at the HTML page or via JavaScript if enabled.
+HTTP is a [protocol](https://developer.mozilla.org/en-US/docs/Web/HTTP/Resources_and_specifications) for fetching resources such as HTML documents. You can [redirect](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Overview) at the service level, within a page or via JavaScript if enabled.
 
 The simplest way to redirect to another URL is to use an [HTML <meta>](https://www.w3docs.com/learn-html/html-meta-tag.html) tag with the http-equiv parameter set to “refresh”. The content attribute sets the delay before the browser redirects the user to the new web page. To redirect immediately, set this parameter to “0” seconds for the content attribute.
 
@@ -86,7 +86,7 @@ The simplest way to redirect to another URL is to use an [HTML <meta>](https://w
 </html>
 ```
 
-However HTTP redirects always execute first thus using the page `serverless` component is more elegant. I don't need build a static html page per URL either manually or via a static site generator such as [Hugo](https://gohugo.io/).
+However HTTP redirects always execute first thus using Cloudflare page `serverless` component is more elegant. I don't need build a static html page per URL either manually or via a static site generator such as [Hugo](https://gohugo.io/).
 
 ## Licence
-**vanityURLs** is [Copyright 2023 Benoît H. Dicaire and licensed under the MIT licence](https://github.com/bhdicaire/vanityURLs/blob/master/LICENCE).
+**vanityURLs** is Copyright 2023 Benoît H. Dicaire and [licensed under the MIT licence](https://github.com/bhdicaire/vanityURLs/blob/master/LICENCE).
