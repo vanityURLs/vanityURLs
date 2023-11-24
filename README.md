@@ -1,8 +1,6 @@
 ![logo](doc/logo.png)
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?color=ee8449&style=flat-square)](#contributors) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
-
-[![GitHub license](https://img.shields.io/github/license/bhdicaire/vanityURLs)](https://github.com/bhdicaire/vanityURLs/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/bhdicaire/vanityURLs)](https://github.com/bhdicaire/vanityURLs/blob/main/LICENSE) [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?color=ee8449&style=flat-square)](#contributors) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
 vanityURLs is a _simple_ solution to deploy a budget-friendly Url Shortener. It runs at scale in your Cloudflare subscription with continuous integration.
 
