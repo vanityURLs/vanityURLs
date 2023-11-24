@@ -74,7 +74,7 @@ The code is tested on OS X Ventura and you need only Node.js, if you want to use
 
 ## Contributions
 
-[Contributions](doc/CONTRIBUTING.md) are welcome! We recognize all [types](https://allcontributors.org/docs/en/emoji-key) based on the [all-contributors](https://github.com/all-contributors/all-contributors) specification. By participating in this project, you agree to abide by the [code of conduct](doc/CODE-OF-CONDUCT.md).
+[Contributions](doc/CONTRIBUTING.md) are welcome! We recognize [all types](https://allcontributors.org/docs/en/emoji-key) based on the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Please note that this project is released with a [Contributor Code of Conduct](doc/CODE-OF-CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
