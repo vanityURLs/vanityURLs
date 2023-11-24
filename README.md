@@ -55,6 +55,8 @@ Make sure to put all the items with placeholders or splats at the end of the `cf
 /github/* https://github.com/bhdicaire/:splat
 ```
 
+> Pages uses HTTP validation and needs to hit an HTTP endpoint during validation. If another Cloudflare product is in the way (such as Access, a redirect, a Worker, etc.), validation cannot be completed.
+
 I'm using the `cfPage/_headers` to include the following items to Cloudflare Pages responses, don't forget to change the URLs for pages.dev and your custom domain:
 ```html
 https://xyz.pages.dev/*
@@ -68,13 +70,11 @@ https://example.com/*
 
 ## Caveat
 
-The code is tested on OS X Ventura and you need only Node.js in the system if you want to use [ Nano ID](https://github.com/ai/nanoid) to generate URL. You get unique ID in terminal by calling `npx nanoid`, you do not need Nano ID to be installed _anywhere_.
-
-> Pages uses HTTP validation and needs to hit an HTTP endpoint during validation. If another Cloudflare product is in the way (such as Access, a redirect, a Worker, etc.), validation cannot be completed.
+The code is tested on OS X Ventura and you need only Node.js, if you want to use [ Nano ID](https://github.com/ai/nanoid) to generate URL. You get unique ID in terminal by calling `npx nanoid`, you do not need Nano ID to be installed _anywhere_.
 
 ## Contributions
 
-We recognize all [types](https://allcontributors.org/docs/en/emoji-key) of [contributions](doc/CONTRIBUTING.md) ✨ based on the [all-contributors](https://github.com/all-contributors/all-contributors) specification. By participating in this project, you agree to [abide by the code of conduct](doc/CODE-OF-CONDUCT.md).
+We recognize all [types](https://allcontributors.org/docs/en/emoji-key) of [contributions](doc/CONTRIBUTING.md) based on the [all-contributors](https://github.com/all-contributors/all-contributors) specification. By participating in this project, you agree to abide by the [code of conduct](doc/CODE-OF-CONDUCT.md).
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
