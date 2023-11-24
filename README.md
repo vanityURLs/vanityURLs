@@ -74,7 +74,7 @@ https://example.com/*
 
 ## Contributions
 
-We recognize all types of [contributions](doc/CONTRIBUTING.md). This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification and the [Emoji Key](https://allcontributors.org/docs/en/emoji-key) ✨ for contribution types. By participating in this project, you agree to [abide by the code of conduct](doc/CODE-OF-CONDUCT.md).
+We recognize all [types](https://allcontributors.org/docs/en/emoji-key) of [contributions](doc/CONTRIBUTING.md) ✨ based on the [all-contributors](https://github.com/all-contributors/all-contributors) specification. By participating in this project, you agree to [abide by the code of conduct](doc/CODE-OF-CONDUCT.md).
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
