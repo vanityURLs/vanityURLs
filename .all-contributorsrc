@@ -17,6 +17,16 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "felleg",
+      "name": "Félix Léger",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7781739?v=4",
+      "profile": "http://felixleger.com",
+      "contributions": [
+        "ideas",
+        "userTesting"
+      ]
     }
-  ]
+  ],
 }
