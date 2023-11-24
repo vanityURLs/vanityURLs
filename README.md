@@ -1,6 +1,6 @@
 ![logo](doc/logo.png)
 
-[![All Contributors](https://img.shields.io/github/all-contributors/bhdicaire/vanityURLs?color=ee8449&style=flat-square)](#contributors) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?color=ee8449&style=flat-square)](#contributors) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
 vanityURLs is a _simple_ solution to deploy a budget-friendly Url Shortener. It runs at scale in your Cloudflare subscription with continuous integration.
 
@@ -93,9 +93,9 @@ The simplest way to redirect to another URL is to use an [HTML <meta>](https://w
 However HTTP redirects always execute first thus using Cloudflare page `serverless` component is more elegant. I don't need build a static html page per URL either manually or via a static site generator such as [Hugo](https://gohugo.io/).
 
 ## Contributing
-If you've ever wanted to contribute to open source, now is your chance! By participating in this project you agree to [abide by its terms](doc/CODE-OF-CONDUCT.md).
+If you've ever wanted to [contribute](doc/CONTRIBUTING.md) to open source, now is your chance! By participating in this project you agree to [abide by the code of conduct](doc/CODE-OF-CONDUCT.md).
 
-We recognize all types of contributions. This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification and the [Emoji Key](https://allcontributors.org/docs/en/emoji-key) ✨ for contribution types. Instructions to add yourself or add contribution emojis to your name are [here](https://github.com/processing/p5.js/issues/2309). You can also post an issue or comment on a pull request with the text: `@all-contributors please add @YOUR-USERNAME for THING(S)` and the bot will add you.
+We recognize all types of contributions. This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification and the [Emoji Key](https://allcontributors.org/docs/en/emoji-key) ✨ for contribution types.
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
