@@ -93,8 +93,8 @@ The code is tested on OS X Ventura and you need only Node.js, if you want to use
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-## Related project
- * [Automated DNS configuration](https://github.com/bhdicaire/dnsConfiguration)
+## Related
+ * [dnsConfiguration](https://github.com/bhdicaire/dnsConfiguration) – Automated DNS configuration with StackOverflow's DNSControl and Git
 
 ## Licence
 **vanityURLs** is Copyright 2023 Benoît H. Dicaire and [licensed under the MIT licence](https://github.com/bhdicaire/vanityURLs/blob/master/LICENCE).
