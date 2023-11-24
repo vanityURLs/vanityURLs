@@ -1,12 +1,13 @@
 {
   "projectName": "vanityURLs",
   "projectOwner": "bhdicaire",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+  "contributorsPerLine": 6,
+  "imageSize": 100,
   "files": [
     "README.md"
   ],
-  "commitType": "docs",
-  "commitConvention": "angular",
-  "contributorsPerLine": 7,
   "contributors": [
     {
       "login": "bhdicaire",
