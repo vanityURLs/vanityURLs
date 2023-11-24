@@ -38,10 +38,6 @@ As long as you secure your Github and Cloudflare accounts with robust authentica
     * Setup a [custom domain](https://developers.cloudflare.com/pages/platform/custom-domains/) for your page project
 5. Configure the DNS entry via [Cloudflare DNS](https://dash.cloudflare.com/)
 
-## How to use?
-
-The code is tested on OS X Ventura and you need only Node.js in the system if you want to use [ Nano ID](https://github.com/ai/nanoid) to generate URL. You get unique ID in terminal by calling `npx nanoid`, you do not need Nano ID to be installed _anywhere_.
-
 You can use `Make`, if this is your cup of tea:
   * url &#8594; Generate a unique ID for a new URL
   * edit  &#8594; Modify the URLs redirection list
@@ -50,8 +46,6 @@ You can use `Make`, if this is your cup of tea:
 The secret sauce are two plain text files:
   * `cfPage/_redirects` based on this [documentation](https://developers.cloudflare.com/pages/platform/redirects)
   * `cfPage/_headers` based on this [documentation](https://developers.cloudflare.com/pages/platform/headers/)
-
-> Pages uses HTTP validation and needs to hit an HTTP endpoint during validation. If another Cloudflare product is in the way (such as Access, a redirect, a Worker, etc.), validation cannot be completed.
 
 Make sure to put all the items with placeholders or splats at the end of the `cfPage/_redirects`.
 
@@ -71,6 +65,12 @@ https://example.com/*
   X-Robots-Tag: noindex
   X-Content-Type-Options: nosniff
 ```
+
+## Caveat
+
+The code is tested on OS X Ventura and you need only Node.js in the system if you want to use [ Nano ID](https://github.com/ai/nanoid) to generate URL. You get unique ID in terminal by calling `npx nanoid`, you do not need Nano ID to be installed _anywhere_.
+
+> Pages uses HTTP validation and needs to hit an HTTP endpoint during validation. If another Cloudflare product is in the way (such as Access, a redirect, a Worker, etc.), validation cannot be completed.
 
 ## Contributions
 
@@ -92,6 +92,9 @@ We recognize all [types](https://allcontributors.org/docs/en/emoji-key) of [cont
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
+## Related project
+ * [Automated DNS configuration](https://github.com/bhdicaire/dnsConfiguration)
 
 ## Licence
 **vanityURLs** is Copyright 2023 Benoît H. Dicaire and [licensed under the MIT licence](https://github.com/bhdicaire/vanityURLs/blob/master/LICENCE).
