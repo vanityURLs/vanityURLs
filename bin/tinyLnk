@@ -1,0 +1,28 @@
+#!/bin/bash
+cd ~/Code/vanityURLs
+
+# Function to generate a random character from a given set
+function random_char() {
+  local characters="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  local length=${#characters}
+  local index=$((RANDOM % length))
+  echo -n "${characters:index:1}"
+}
+
+# Generate a 5-character random string
+random_string=""
+for i in {1..5}; do
+  random_string="${random_string}$(random_char)"
+done
+
+echo "/$random_string $1" >> static.lnk
+mv cfPage/_redirects cfPage/redirects.old
+cat static.lnk dynamic.lnk > cfPage/_redirects
+git add cfPage/_redirects
+git commit -m "add redirect for $1"
+git push origin main
+
+echo "Your shortened URL is https://tinyInternetDomain.com/$random_string"
+# Please give ~15 seconds for your link to become valid
+
+cd - > /dev/null
