@@ -1,6 +1,5 @@
-/ https://example.com/ 301
+/ https://bhdicaire.com/ 301
 
-/zBGDE https://blog.example/contact.vcf/ 301
 /blog https://blog.example/ 301
 /mail https://outlook.office.com/ 301
 /gmail https://gmail.com/ 301
