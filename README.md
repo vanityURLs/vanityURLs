@@ -24,13 +24,13 @@ This kind of solution is known as TinyURL, tiny url, shorten that long URL, URL 
 
 As long as you secure your Github and Cloudflare accounts with robust authentication, there is not much that can go wrong with such simple solution. It use the products as designed, there is no hack involved.
 
-Refer to [how does it work?](doc/how.md) for more information.
+Refer to [how does it work](doc/how.md) for more information.
 
 ## Installation
 
 1. Register a _tiny_ internet domain name with your [preferred vendor](https://www.cloudflare.com/en-ca/products/registrar/)
 2. Add the domain to [Cloudflare DNS](https://dash.cloudflare.com/)
-3. Fork the repository as a public or as a __private__ GitHub repository
+3. Fork the repository
 4. Create a project underneath Cloudflare Workers & Pages
     *  [Connect the repository](https://developers.cloudflare.com/pages/get-started/guide/#connect-your-git-provider-to-pages)
     * Configure your deployment and build setup:
@@ -40,6 +40,13 @@ Refer to [how does it work?](doc/how.md) for more information.
     * Open the _xyz_.page.dev in your browser, you should be redirected to https://BHDicaire.com based on the [current configuration](build/_redirects)
     * Setup a [custom domain](https://developers.cloudflare.com/pages/platform/custom-domains/) for your page project
 5. Configure the DNS entry via [Cloudflare DNS](https://dash.cloudflare.com/)
+6. Open the defined DNS entry in your browser, you should be redirected to https://BHDicaire.com based on the [current configuration](build/_redirects)
+7. Update the [header configuration](build/_headers)
+    * Change `https://xyz.pages.dev/*`  &#8594; to your cloudflare's specfic page URL
+    * Change `https://example.com/*`  &#8594; to your _tiny_ internet domain name
+8. Update the [redirection list](build/_redirects)
+9. Add and commit the change to the github repository
+    * Cloudflare will detect the change and initiate a deployment
 
 ## Administration
 
