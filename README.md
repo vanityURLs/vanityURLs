@@ -22,7 +22,9 @@ This kind of solution is known as TinyURL, tiny url, shorten that long URL, URL 
 
 ### It's bullet proof
 
-As long as you secure your Github and Cloudflare accounts with robust authentication, there is not much that can go wrong with such simple solution. It use the products as designed, there is no hack involved. Refer to [Everything you always wanted to know about URL redirection (but were afraid to ask)](doc/url-redirection.md) for more information.
+As long as you secure your Github and Cloudflare accounts with robust authentication, there is not much that can go wrong with such simple solution. It use the products as designed, there is no hack involved.
+
+Refer to [how does it work?](doc/how.md) for more information.
 
 ## Installation
 
@@ -35,8 +37,8 @@ As long as you secure your Github and Cloudflare accounts with robust authentica
       * Framework preset: none
       * Build command: none
       * Build output directory: /build
-    * Open the _xyz_.page.dev in your browser, you should be redirected to https://BHDicaire.com based on the current content of
-    Setup a [custom domain](https://developers.cloudflare.com/pages/platform/custom-domains/) for your page project
+    * Open the _xyz_.page.dev in your browser, you should be redirected to https://BHDicaire.com based on the [current configuration](build/_redirects)
+    * Setup a [custom domain](https://developers.cloudflare.com/pages/platform/custom-domains/) for your page project
 5. Configure the DNS entry via [Cloudflare DNS](https://dash.cloudflare.com/)
 
 ## Administration
@@ -47,34 +49,6 @@ You can use the following `Bash scripts`, if this is your cup of tea. Refer to t
 | ---- | ----------- |
 | `bin/lnk` | Generate a custom ID for a new URL, git add + commit |
 | `bin/tinylnk` | Generate a unique ID for a new URL, git add + commit |
-
-
-## How does it work?
-The secret sauce are two plain text files:
-  * `build/_redirects` based on this [documentation](https://developers.cloudflare.com/pages/platform/redirects)
-  * `build/_headers` based on this [documentation](https://developers.cloudflare.com/pages/platform/headers/)
-
-Make sure to put all the items with placeholders or splats at the end of the `build/_redirects`.
-
-```bash
-/mail https://outlook.office.com/ 301
-/github https://github.com/bhdicaire/ 301
-/github/* https://github.com/bhdicaire/:splat
-```
-
-> Pages uses HTTP validation and needs to hit an HTTP endpoint during validation. If another Cloudflare product is in the way (such as Access, a redirect, a Worker, etc.), validation cannot be completed.
-
-I'm using the `build/_headers` to include the following items to Cloudflare Pages responses, don't forget to change the URLs for pages.dev and your custom domain:
-```html
-https://xyz.pages.dev/*
-  X-Robots-Tag: noindex
-  X-Content-Type-Options: nosniff
-
-https://example.com/*
-  X-Robots-Tag: noindex
-  X-Content-Type-Options: nosniff
-```
-
 
 
 ## Contributions
