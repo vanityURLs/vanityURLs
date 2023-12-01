@@ -7,12 +7,12 @@ vanityURLs is a _simple_ solution to deploy a budget-friendly Url Shortener. It 
 > If you don't own an a Cloudflare subscription already, you can create your free account today so you can experience everything without spending a dime.
 
 Features:
- * Fully branded internet domain using Cloudflare,  [DNS](https://www.cloudflare.com/en-ca/application-services/products/dns/) & [Pages](https://pages.cloudflare.com/) so your links are compact and pretty
+ * Fully branded internet domain using Cloudflare's [DNS](https://www.cloudflare.com/en-ca/application-services/products/dns/) & [Pages](https://pages.cloudflare.com/) so your links are compact and pretty
  * URL redirection (301, 302, 303, 307 and 308)
  * Advanced redirection with splats (e.g., /news/*  &#8594; /blog/:splat )
  * Continuous integration managed by Cloudflare Page Engine
 
-My objective is to work at the command line and automate it. So feel free to fork, and customize.
+My objective is to work at the [command line](doc/administration.md) and automate it. So feel free to fork, and customize.
 
 ## What problem does it solve and why is it useful?
 
@@ -30,7 +30,7 @@ Refer to [how does it work](doc/how.md) for more information.
 
 1. Register a _tiny_ internet domain name with your [preferred vendor](https://www.cloudflare.com/en-ca/products/registrar/)
 2. Add the domain to [Cloudflare DNS](https://dash.cloudflare.com/)
-3. Fork the repository
+3. Fork the repository, you just need the `main` branch
 4. Create a project underneath Cloudflare Workers & Pages
     *  [Connect the repository](https://developers.cloudflare.com/pages/get-started/guide/#connect-your-git-provider-to-pages)
     * Configure your deployment and build setup:
