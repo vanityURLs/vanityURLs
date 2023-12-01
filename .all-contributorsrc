@@ -3,7 +3,9 @@
   "projectOwner": "bhdicaire",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "files": ["README.md"],
+  "files": [
+    "README.md"
+  ],
   "contributorsSortAlphabetically": true,
   "contributorsPerLine": 6,
   "imageSize": 100,
@@ -26,8 +28,11 @@
       "profile": "http://felixleger.com",
       "contributions": [
         "ideas",
-        "userTesting"
+        "userTesting",
+        "promotion"
       ]
     }
-  ]
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular"
 }
