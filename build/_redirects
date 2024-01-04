@@ -11,5 +11,6 @@
 /github https://github.com/bhdicaire/
 /gitlab https://gitlab.com/bhdicaire/
 /V8wE2 felixleger.com/books
+/2u9tP felixleger.com/books
 
 /github/* https://github.com/bhdicaire/:splat
