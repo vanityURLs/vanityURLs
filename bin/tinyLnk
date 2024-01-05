@@ -22,7 +22,7 @@ git add build/_redirects
 git commit -m "add redirect for $1"
 git push origin main
 
-echo "Your shortened URL is https://tinyInternetDomain.com/$random_string"
+echo "Your shortened URL is https://felleg2.xyz/$random_string"
 # Please give ~15 seconds for your link to become valid
 
 cd - > /dev/null
