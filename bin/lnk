@@ -2,9 +2,9 @@
 cd ~/Code/vanityURLs
 
 echo "/$1 $2" >> static.lnk
-mv cfPage/_redirects cfPage/redirects.old
-cat static.lnk dynamic.lnk > cfPage/_redirects
-git add cfPage/_redirects
+mv build/_redirects build/redirects.old
+cat static.lnk dynamic.lnk > build/_redirects
+git add build/_redirects
 git commit -m "add redirect $1 for $2"
 git push origin main
 
