@@ -1,18 +1,1 @@
-/ https://bhdicaire.com/
-
-/blog https://blog.example/
-/mail https://outlook.office.com/
-/gmail https://gmail.com/
-/slack https://example.slack.com/
-
-/linkedin https://linkedin.com/in/bhdicaire/
-/x https://twitter.com/BHDicaire/
-
-/github https://github.com/bhdicaire/
-/gitlab https://gitlab.com/bhdicaire/
-/V8wE2 felixleger.com/books
-/2u9tP felixleger.com/books
-/X2A3B http://felixleger.com/books
-/iSZXt https://felixleger.com/books
-
-/github/* https://github.com/bhdicaire/:splat
+/test https://felixleger.com/books 301
