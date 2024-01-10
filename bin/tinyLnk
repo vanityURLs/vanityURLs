@@ -1,4 +1,5 @@
 #!/bin/bash
+YOURDOMAIN=put_your_domain_here
 
 # Replace with your own path here
 cd ~/Code/vanityURLs
@@ -18,13 +19,11 @@ for i in {1..5}; do
 done
 
 echo "/$random_string $1" >> static.lnk
-mv build/_redirects build/redirects.old
-cat static.lnk dynamic.lnk > build/_redirects
-git add build/_redirects
+git add static.lnk
 git commit -m "add redirect for $1"
 git push origin main
 
-echo "Your shortened URL is https://tinyInternetDomain.com/$random_string"
+echo "Your shortened URL is https://$YOURDOMAIN.com/$random_string"
 echo "Please give ~15 seconds for your link to become valid"
 
 cd - > /dev/null

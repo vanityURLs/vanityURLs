@@ -1,16 +1,15 @@
 #!/bin/bash
+YOURDOMAIN=put_your_domain_here
 
 # Replace with your own path here
 cd ~/Code/vanityURLs
 
 echo "/$1 $2" >> static.lnk
-mv build/_redirects build/redirects.old
-cat static.lnk dynamic.lnk > build/_redirects
-git add build/_redirects
+git add build/static.lnk
 git commit -m "add redirect $1 for $2"
 git push origin main
 
-echo "Your shortened URL is https://tinyInternetDomain.com/$1 --> $2"
+echo "Your shortened URL is https://$YOURDOMAIN.com/$1 --> $2"
 echo "Please give ~15 seconds for your link to become valid"
 
 cd - > /dev/null
