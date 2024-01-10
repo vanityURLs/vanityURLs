@@ -1,4 +1,6 @@
 #!/bin/bash
+
+# Replace with your own path here
 cd ~/Code/vanityURLs
 
 # Function to generate a random character from a given set
@@ -16,13 +18,13 @@ for i in {1..5}; do
 done
 
 echo "/$random_string $1" >> static.lnk
-mv cfPage/_redirects cfPage/redirects.old
-cat static.lnk dynamic.lnk > cfPage/_redirects
-git add cfPage/_redirects
+mv build/_redirects build/redirects.old
+cat static.lnk dynamic.lnk > build/_redirects
+git add build/_redirects
 git commit -m "add redirect for $1"
 git push origin main
 
 echo "Your shortened URL is https://tinyInternetDomain.com/$random_string"
-# Please give ~15 seconds for your link to become valid
+echo "Please give ~15 seconds for your link to become valid"
 
 cd - > /dev/null

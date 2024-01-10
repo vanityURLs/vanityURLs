@@ -1,14 +1,16 @@
 #!/bin/bash
+
+# Replace with your own path here
 cd ~/Code/vanityURLs
 
 echo "/$1 $2" >> static.lnk
-mv cfPage/_redirects cfPage/redirects.old
-cat static.lnk dynamic.lnk > cfPage/_redirects
-git add cfPage/_redirects
+mv build/_redirects build/redirects.old
+cat static.lnk dynamic.lnk > build/_redirects
+git add build/_redirects
 git commit -m "add redirect $1 for $2"
 git push origin main
 
 echo "Your shortened URL is https://tinyInternetDomain.com/$1 --> $2"
-# Please give ~15 seconds for your link to become valid
+echo "Please give ~15 seconds for your link to become valid"
 
 cd - > /dev/null
