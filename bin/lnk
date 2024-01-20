@@ -84,7 +84,7 @@ if [ "$?" -ne 0 ]; then
 fi
 
 
-if [ $DRY_RUN = true ]; then
+if [ "$DRY_RUN" = true ]; then
   echo "Dry run, files will not be modified."
 else
   echo "/$SHORTCODE $LONG_URL" >> $STATIC_FILE
