@@ -55,8 +55,7 @@ You can use the following `Bash scripts`, if this is your cup of tea. Refer to t
 
 | Name | Description |
 | ---- | ----------- |
-| `bin/lnk` | Generate a custom ID for a new URL, git add + commit |
-| `bin/tinylnk` | Generate a unique ID for a new URL, git add + commit |
+| `bin/lnk` | Generate an ID for a new URL, either randomized or customized |
 
 
 ## Contributions

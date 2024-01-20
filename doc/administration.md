@@ -1,11 +1,12 @@
 # Administration
 
-You can use the following `Bash scripts`, if this is your cup of tea. Refer to the [documentation](doc/administration.md).
+You can use the following `Bash scripts` to speed up the creation of URLs
 
 | Name | Description |
 | ---- | ----------- |
-| `bin/lnk` | Generate a custom ID for a new URL, git add + commit |
-| `bin/tinylnk` | Generate a unique ID for a new URL, git add + commit |
+| `bin/lnk` | Generate an ID for a new URL, either randomized or customized |
+
+What `bin/lnk` script does:
 
 1. Generate a specific or a unique ID for a new URL
 2. Add the link to the local git repository
@@ -14,8 +15,9 @@ You can use the following `Bash scripts`, if this is your cup of tea. Refer to t
 
 Cloudflare will detect the change and initiate a deployment 😄
 
+## Requirements
 
-
-## Caveat
-
-The code is tested on OS X Ventura and you need only Node.js, if you want to use [ Nano ID](https://github.com/ai/nanoid) to generate URL. You get unique ID in terminal by calling `npx nanoid`, you do not need Nano ID to be installed _anywhere_.
+Note that in order to use the scripts mentioned above, you will need a
+`~/.vanityURLs.conf` file on your machine with *your* specific values,
+e.g. the path to the repo on your machine, your tiny domain, etc.. A template for this file can
+be found [here](../.vanityURLs.conf).
