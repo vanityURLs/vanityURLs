@@ -35,7 +35,7 @@ Refer to [how does it work](doc/how.md) for more information.
     *  [Connect the repository](https://developers.cloudflare.com/pages/get-started/guide/#connect-your-git-provider-to-pages)
     * Configure your deployment and build setup:
       * Framework preset: (leave empty)
-      * Build command: `cat static.lnk dynamic lnk > build/_redirects`
+      * Build command: `cat static.lnk dynamic.lnk > build/_redirects`
       * Build output directory: `/build`
     * Open the _xyz_.page.dev in your browser, you should be redirected to https://BHDicaire.com based on the [current configuration](build/_redirects)
     * Setup a [custom domain](https://developers.cloudflare.com/pages/platform/custom-domains/) for your page project
