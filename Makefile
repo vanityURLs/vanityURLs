@@ -13,7 +13,7 @@ debug:
 	echo $(MY_DOMAIN)
 	[ -f $(localConfig) ] && source $(localConfig)
 
-customize: ## Modify the .vanityURLS.conf before running setup
+config: ## Modify the .vanityURLS.conf before running setup
 	@vi $(localConfig)
 
 setup: ## Setup the environment
