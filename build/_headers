@@ -1,7 +1,7 @@
-https://yourrepo.pages.dev/*
+https://yourRepo.pages.dev/*
   X-Robots-Tag: noindex
   X-Content-Type-Options: nosniff
-
-https://yourdomain.com/*
+  
+https://yourDomain.com/*
   X-Robots-Tag: noindex
   X-Content-Type-Options: nosniff
