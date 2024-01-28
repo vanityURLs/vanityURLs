@@ -26,37 +26,13 @@ As long as you secure your Github and Cloudflare accounts with robust authentica
 
 Refer to [how does it work](doc/how.md) for more information.
 
-## Installation
+## Setup
 
 1. Register a _tiny_ internet domain name with your [preferred vendor](https://www.cloudflare.com/en-ca/products/registrar/)
-2. Add the domain to [Cloudflare DNS](https://dash.cloudflare.com/)
-3. Fork the repository, you just need the `main` branch
-4. Create a project underneath Cloudflare Workers & Pages
-    *  [Connect the repository](https://developers.cloudflare.com/pages/get-started/guide/#connect-your-git-provider-to-pages)
-    * Configure your deployment and build setup:
-      * Framework preset: (leave empty)
-      * Build command: `cat static.lnk dynamic.lnk > build/_redirects`
-      * Build output directory: `/build`
-    * Open the _xyz_.page.dev in your browser, you should be redirected to https://BHDicaire.com based on the [current configuration](build/_redirects)
-    * Setup a [custom domain](https://developers.cloudflare.com/pages/platform/custom-domains/) for your page project
-5. Configure the DNS entry via [Cloudflare DNS](https://dash.cloudflare.com/)
-6. Open the defined DNS entry in your browser, you should be redirected to https://BHDicaire.com based on the [current configuration](build/_redirects)
-7. Update the [header configuration](build/_headers)
-    * Change `https://yourrepo.pages.dev/*`  &#8594; to your cloudflare's specfic page URL
-    * Change `https://yourdomain.com/*`  &#8594; to your _tiny_ internet domain name
-8. Update the [static](static.lnk) and [dynamic](dynamic.lnk)
-   redirection lists.
-9. Add and commit the change to the github repository
-    * Cloudflare will detect the change and initiate a deployment
-
-## Administration
-
-You can use the following `Bash scripts`, if this is your cup of tea. Refer to the [documentation](doc/administration.md).
-
-| Name | Description |
-| ---- | ----------- |
-| `bin/lnk` | Generate an ID for a new URL, either randomized or customized |
-
+2. If you don't own an a [Cloudflare subscription](https://dash.cloudflare.com/) already, you need to create a free account
+3. Add the _tiny_ internet domain name to [Cloudflare DNS](https://dash.cloudflare.com/)
+4. [Follow the instructions](doc/installation.md) to fork the GitHub repository and customize your setup
+5. Use the [`lnk` bash script](script/lnk) to shorten, personalize, and share fully branded short URLs with continuous integration on Cloudflare
 
 ## Contributions
 
