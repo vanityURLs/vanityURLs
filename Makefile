@@ -24,8 +24,9 @@ setup: ## Setup the environment
 	chmod +x $(SCRIPT_DIR)/lnk
 	chmod +x $(SCRIPT_DIR)/validateURL
 
-	rm build/_headers 2> /dev/null
-		echo "https://"$(MY_PAGE)"/*" > build/_headers
+	mkdir -p build
+	rm build/_headers 2> /dev/null || true
+	echo "https://"$(MY_PAGE)"/*" > build/_headers
 	echo "  X-Robots-Tag: noindex" >> build/_headers
 	echo "  X-Content-Type-Options: nosniff" >> build/_headers
 	echo "  " >> build/_headers

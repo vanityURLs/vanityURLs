@@ -1,0 +1,99 @@
+#!/bin/bash
+LOCAL_CONFIG="$HOME/.vanityURLs.conf"
+STATIC_FILE="static.lnk"
+MAX_ATTEMPTS=100
+
+function print_usage() {
+  echo "There are two valid ways to call this script:"
+  echo -e "1) A random shortcode will be generated automatically:\n\t./bin/lnk [LONG_URL]"
+  echo -e "2) Specify the shortcode you want:\n\t./bin/lnk [LONG_URL] [SHORTCODE]"
+  exit 1
+}
+
+# Function to generate a random character from a given set
+function random_char() {
+  # Potentially ambiguous characters (e.g. '1', 'I', and 'l') are
+  # ignored.
+  local characters="34789abcdefghijmnpqrstwxyABCDEFHJLMNPQRTUVWXY"
+  local N_CHARS=${#characters}
+  local index=$((RANDOM % $N_CHARS))
+  echo -n "${characters:index:1}"
+}
+
+function generate_shortcode() {
+  # Generate a random string
+  random_string=""
+  for i in $(seq 1 $SHORTCODE_LENGTH); do
+    random_string="${random_string}$(random_char)"
+  done
+
+  # Check if "/$random_string is already in the file
+  counter=0  # Initialize the counter
+  while [ "$counter" -le $MAX_ATTEMPTS ]; do
+    if grep -q "^/$random_string" "$STATIC_FILE"; then
+      ((counter++))
+    else
+      echo $random_string
+      break
+    fi
+  done
+}
+
+if [ -f "$LOCAL_CONFIG" ]; then
+  source $LOCAL_CONFIG
+else
+  echo "Error: $LOCAL_CONFIG not found."
+  echo "Hint: Did you do \`cp $(basename $LOCAL_CONFIG) $HOME\` and set your values?"
+  exit 1
+fi
+
+# Expand REPO_DIR in case it starts with '~/'
+eval REPO_DIR=$REPO_DIR
+cd $REPO_DIR
+
+case "$#" in
+  0)
+    print_usage
+    ;;
+  1)
+    LONG_URL="$1"
+    SHORTCODE=$(generate_shortcode)
+    if [ "$SHORTCODE" = "" ]; then
+      echo "Error: $MAX_ATTEMPTS attempts were made to find a unique random string for your URL in $STATIC_FILE, but no success.
+      Aborting. Consider raising the value of SHORTCODE_LENGTH in '$LOCAL_CONFIG'."
+      exit 1
+    fi
+    ;;
+  2)
+    LONG_URL="$1"
+    SHORTCODE="$2"
+    if grep -q "^/$SHORTCODE" "$STATIC_FILE"; then
+      echo "Error: /$SHORTCODE is already taken in $STATIC_FILE."
+      exit 1
+    fi
+    ;;
+  *)
+    print_usage
+    ;;
+esac
+
+# Validate long URL given by user
+$REPO_DIR/bin/validateURL $LONG_URL
+if [ "$?" -ne 0 ]; then
+  exit 1
+fi
+
+
+if [ "$DRY_RUN" = true ]; then
+  echo "Dry run, files will not be modified."
+else
+  echo "/$SHORTCODE $LONG_URL" >> $STATIC_FILE
+  git add $STATIC_FILE
+  git commit -m "add redirect /$SHORTCODE --> $LONG_URL"
+  git push origin main
+fi
+
+echo "Your shortened URL is https://$MY_DOMAIN/$SHORTCODE"
+echo "Please give ~15 seconds for your link to become valid"
+
+cd - > /dev/null
