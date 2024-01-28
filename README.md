@@ -34,17 +34,18 @@ Refer to [how does it work](doc/how.md) for more information.
 4. Create a project underneath Cloudflare Workers & Pages
     *  [Connect the repository](https://developers.cloudflare.com/pages/get-started/guide/#connect-your-git-provider-to-pages)
     * Configure your deployment and build setup:
-      * Framework preset: none
-      * Build command: none
-      * Build output directory: /build
+      * Framework preset: (leave empty)
+      * Build command: `cat static.lnk dynamic.lnk > build/_redirects`
+      * Build output directory: `/build`
     * Open the _xyz_.page.dev in your browser, you should be redirected to https://BHDicaire.com based on the [current configuration](build/_redirects)
     * Setup a [custom domain](https://developers.cloudflare.com/pages/platform/custom-domains/) for your page project
 5. Configure the DNS entry via [Cloudflare DNS](https://dash.cloudflare.com/)
 6. Open the defined DNS entry in your browser, you should be redirected to https://BHDicaire.com based on the [current configuration](build/_redirects)
 7. Update the [header configuration](build/_headers)
-    * Change `https://xyz.pages.dev/*`  &#8594; to your cloudflare's specfic page URL
-    * Change `https://example.com/*`  &#8594; to your _tiny_ internet domain name
-8. Update the [redirection list](build/_redirects)
+    * Change `https://yourrepo.pages.dev/*`  &#8594; to your cloudflare's specfic page URL
+    * Change `https://yourdomain.com/*`  &#8594; to your _tiny_ internet domain name
+8. Update the [static](static.lnk) and [dynamic](dynamic.lnk)
+   redirection lists.
 9. Add and commit the change to the github repository
     * Cloudflare will detect the change and initiate a deployment
 
@@ -54,8 +55,7 @@ You can use the following `Bash scripts`, if this is your cup of tea. Refer to t
 
 | Name | Description |
 | ---- | ----------- |
-| `bin/lnk` | Generate a custom ID for a new URL, git add + commit |
-| `bin/tinylnk` | Generate a unique ID for a new URL, git add + commit |
+| `bin/lnk` | Generate an ID for a new URL, either randomized or customized |
 
 
 ## Contributions
