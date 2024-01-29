@@ -32,7 +32,7 @@ Refer to [how does it work](doc/how.md) for more information.
 2. If you don't own an a [Cloudflare subscription](https://dash.cloudflare.com/) already, you need to create a free account
 3. Add the _tiny_ internet domain name to [Cloudflare DNS](https://dash.cloudflare.com/)
 4. [Follow the instructions](doc/installation.md) to fork the GitHub repository and customize your setup
-5. Use the [`lnk` bash script](script/lnk) to shorten, personalize, and share fully branded short URLs with continuous integration on Cloudflare
+5. Use the [`lnk` bash script](scripts/lnk) to shorten, personalize, and share fully branded short URLs with continuous integration on Cloudflare
 
 ## Contributions
 
