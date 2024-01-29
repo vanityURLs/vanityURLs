@@ -29,5 +29,5 @@
 8. Update the main branch of your local git repository and push to GitHub
 9. Cloudflare will detect the change and initiate a deployment, please give ~15 seconds for your links to become valid
 10. Open the defined fully qualified domain name for your _tiny_ internet domain name in your web browser, and you should be redirected to https://BHDicaire.com based on the [initial configuration](build/_redirects)
-11. Fine tune the [static](static.lnk) and [dynamic](dynamic.lnk) redirection lists with your preferred text editor and the [`lnk` bash script](script/lnk)
+11. Fine tune the [static](static.lnk) and [dynamic](dynamic.lnk) redirection lists with your preferred text editor and the [`lnk` bash script](scripts/lnk)
 12. Add and commit the change to the github repository
