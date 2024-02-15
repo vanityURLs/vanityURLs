@@ -20,4 +20,4 @@ Cloudflare will detect the change and initiate a deployment 😄
 Note that in order to use the scripts mentioned above, you will need a
 `~/.vanityURLs.conf` file on your machine with *your* specific values,
 e.g. the path to the repo on your machine, your tiny domain, etc.. A template for this file can
-be found [here](../.vanityURLs.conf).
+be found [here](../vanityURLs.conf).
