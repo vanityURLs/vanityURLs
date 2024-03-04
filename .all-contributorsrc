@@ -31,6 +31,15 @@
         "userTesting",
         "promotion"
       ]
+    },
+    {
+      "login": "slig",
+      "name": "Tiago Serafim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37779?v=4",
+      "profile": "https://github.com/slig",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "commitType": "docs",
