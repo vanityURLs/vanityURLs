@@ -5,8 +5,8 @@ MAX_ATTEMPTS=100
 
 function print_usage() {
   echo "There are two valid ways to call this script:"
-  echo -e "1) A random shortcode will be generated automatically:\n\t./bin/lnk [LONG_URL]"
-  echo -e "2) Specify the shortcode you want:\n\t./bin/lnk [LONG_URL] [SHORTCODE]"
+  echo -e "1) A random shortcode will be generated automatically:\n\t./scripts/lnk [LONG_URL]"
+  echo -e "2) Specify the shortcode you want:\n\t./scripts/lnk [LONG_URL] [SHORTCODE]"
   exit 1
 }
 
@@ -77,16 +77,25 @@ case "$#" in
     ;;
 esac
 
+# If the long URL is already being redirected, notify the user
+if grep -q -P "$LONG_URL( |$)" $STATIC_FILE; then
+  echo "This URL is already being redirected:"
+  grep -P "$LONG_URL( |$)" $STATIC_FILE
+  exit 1
+fi
+
 # Validate long URL given by user
-$REPO_DIR/bin/validateURL $LONG_URL
+$REPO_DIR/scripts/validateURL $LONG_URL
 if [ "$?" -ne 0 ]; then
   exit 1
 fi
 
 
+
 if [ "$DRY_RUN" = true ]; then
   echo "Dry run, files will not be modified."
 else
+  git fetch; git pull origin $(git branch --show-current)
   echo "/$SHORTCODE $LONG_URL" >> $STATIC_FILE
   git add $STATIC_FILE
   git commit -m "add redirect /$SHORTCODE --> $LONG_URL"
