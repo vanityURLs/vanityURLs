@@ -5,8 +5,8 @@ MAX_ATTEMPTS=100
 
 function print_usage() {
   echo "There are two valid ways to call this script:"
-  echo -e "1) A random shortcode will be generated automatically:\n\t./bin/lnk [LONG_URL]"
-  echo -e "2) Specify the shortcode you want:\n\t./bin/lnk [LONG_URL] [SHORTCODE]"
+  echo -e "1) A random shortcode will be generated automatically:\n\t./scripts/lnk [LONG_URL]"
+  echo -e "2) Specify the shortcode you want:\n\t./scripts/lnk [LONG_URL] [SHORTCODE]"
   exit 1
 }
 
@@ -85,7 +85,7 @@ if grep -q -P "$LONG_URL( |$)" $STATIC_FILE; then
 fi
 
 # Validate long URL given by user
-$REPO_DIR/bin/validateURL $LONG_URL
+$REPO_DIR/scripts/validateURL $LONG_URL
 if [ "$?" -ne 0 ]; then
   exit 1
 fi
