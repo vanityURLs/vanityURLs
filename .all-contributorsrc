@@ -40,6 +40,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "XVII",
+      "name": "Jake Edwards",
+      "avatar_url": "https://avatars.githubusercontent.com/u/446329?v=4",
+      "profile": "https://xvii.au",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "commitType": "docs",
