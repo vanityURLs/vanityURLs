@@ -34,6 +34,17 @@ Refer to [how does it work](doc/how.md) for more information.
 4. [Follow the instructions](doc/installation.md) to fork the GitHub repository and customize your setup
 5. Use the [`lnk` bash script](scripts/lnk) to shorten, personalize, and share fully branded short URLs with continuous integration on Cloudflare
 
+## Limitations
+
+As this code is deployed on Cloudflare Pages, there are some product limits to be aware of:
+
+* A maximum of 2,000 static redirects and 100 dynamic redirects, for a combined total of 2,100 redirects ([source](https://developers.cloudflare.com/pages/platform/limits/#redirects)).
+* The Free plan supports up to 500 automated builds per month ([source](https://developers.cloudflare.com/pages/platform/limits/#builds)).
+
+Most of these limits wouldn't be reached in general use, but it's good to note for larger-scale deployments.
+
+Platform-wise, the `lnk` scripts require `bash` and so are not natively compatible with Windows at this time.
+
 ## Contributions
 
 [Contributions](doc/CONTRIBUTING.md) are welcome! We recognize [all types](https://allcontributors.org/docs/en/emoji-key) based on the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Please note that this project is released with a [Contributor Code of Conduct](doc/CODE-OF-CONDUCT.md). By participating in this project you agree to abide by its terms.
