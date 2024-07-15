@@ -2,11 +2,14 @@
 LOCAL_CONFIG="$HOME/.vanityURLs.conf"
 STATIC_FILE="static.lnk"
 MAX_ATTEMPTS=100
+SHORTCODE=""
 
 function print_usage() {
   echo "There are two valid ways to call this script:"
   echo -e "1) A random shortcode will be generated automatically:\n\t./scripts/lnk [LONG_URL]"
   echo -e "2) Specify the shortcode you want:\n\t./scripts/lnk [LONG_URL] [SHORTCODE]"
+  echo
+  echo -e "You may call this script with DRY_RUN=true for testing purposes."
   exit 1
 }
 
@@ -28,12 +31,15 @@ function generate_shortcode() {
     for i in $(seq 1 $SHORTCODE_LENGTH); do
       random_string="${random_string}$(random_char)"
     done
+    if [ "$DRY_RUN" = true ]; then
+      echo "Attempt $counter: $random_string"
+    fi
 
     # Check if "/$random_string is already in the file
     if grep -q "^/$random_string" "$STATIC_FILE"; then
       ((counter++))
     else
-      echo $random_string
+      SHORTCODE=$random_string
       break
     fi
   done
@@ -57,7 +63,7 @@ case "$#" in
     ;;
   1)
     LONG_URL="$1"
-    SHORTCODE=$(generate_shortcode)
+    generate_shortcode  # This sets SHORTCODE
     if [ "$SHORTCODE" = "" ]; then
       echo "Error: $MAX_ATTEMPTS attempts were made to find a unique random string for your URL in $STATIC_FILE, but no success.
       Aborting. Consider raising the value of SHORTCODE_LENGTH in '$LOCAL_CONFIG'."
