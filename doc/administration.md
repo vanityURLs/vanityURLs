@@ -4,9 +4,9 @@ You can use the following `Bash scripts` to speed up the creation of URLs
 
 | Name | Description |
 | ---- | ----------- |
-| `bin/lnk` | Generate an ID for a new URL, either randomized or customized |
+| `scripts/lnk` | Generate an ID for a new URL, either randomized or customized |
 
-What `bin/lnk` script does:
+What `scripts/lnk` script does:
 
 1. Generate a specific or a unique ID for a new URL
 2. Add the link to the local git repository
