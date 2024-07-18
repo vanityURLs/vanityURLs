@@ -20,7 +20,7 @@ function random_char() {
   local characters="34789abcdefghijmnpqrstwxyABCDEFHJLMNPQRTUVWXY"
   local N_CHARS=${#characters}
   local index=$((RANDOM % $N_CHARS))
-  echo -n "${characters:index:1}"
+  echo -n "${characters:$index:1}"
 }
 
 function generate_shortcode() {
