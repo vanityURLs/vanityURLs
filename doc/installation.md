@@ -17,7 +17,7 @@
     * The build will fail as you still need to generate `static.lnk`, `dynamic.lnk`, and `build/_headers` later in the process
 4. Setup a [custom domain](https://developers.cloudflare.com/pages/platform/custom-domains/) for your page project
     * Configure the DNS entry via [Cloudflare DNS](https://dash.cloudflare.com/)
-5. Define your configuration in the `vanityURLS.conf` with your preferred text editor or via `make config` if `vi` is your cup of tea
+5. Define your configuration in the `vanityURLs.conf` with your preferred text editor or via `make config` if `vi` is your cup of tea
   * SCRIPT_DIR: the path to your local scripts folder included in your path
   * REPO_DIR: the path to your local copy of vanityURLs
   * MY_DOMAIN: your tiny internet domain served by Cloudflare
