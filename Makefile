@@ -13,11 +13,11 @@ debug:
 	echo $(MY_DOMAIN)
 	[ -f $(localConfig) ] && source $(localConfig)
 
-config: ## Modify the .vanityURLS.conf before running setup
+config: ## Modify the .vanityURLs.conf before running setup
 	@vi $(localConfig)
 
 setup: ## Setup the environment
-	cp vanityURLS.conf ~/.vanityURLS.conf
+	cp vanityURLs.conf ~/.vanityURLs.conf
 
 	mkdir -p $(SCRIPT_DIR)
 	cp scripts/* $(SCRIPT_DIR)
@@ -34,10 +34,10 @@ setup: ## Setup the environment
 	echo "  X-Robots-Tag: noindex" >> build/_headers
 	echo "  X-Content-Type-Options: nosniff" >> build/_headers
 
-	rm dynamic.lnk 2> /dev/null
+	rm dynamic.lnk 2> /dev/null || true
 	echo "/github/* https://github.com/bhdicaire/:splat" > dynamic.lnk
 
-	rm static.lnk 2> /dev/null
+	rm static.lnk 2> /dev/null || true
 	echo "/ https://bhdicaire.com/" > static.lnk
 	echo "/linkedin https://linkedin.com/in/bhdicaire/" >> static.lnk
 	echo "/x https://twitter.com/BHDicaire/" >> static.lnk
