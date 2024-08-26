@@ -36,7 +36,7 @@ function generate_shortcode() {
     fi
 
     # Check if "/$random_string is already in the file
-    if grep -q "^/$random_string" "$STATIC_FILE"; then
+    if grep -q "^/$random_string " "$STATIC_FILE"; then
       ((counter++))
     else
       SHORTCODE=$random_string
@@ -73,7 +73,7 @@ case "$#" in
   2)
     LONG_URL="$1"
     SHORTCODE="$2"
-    if grep -q "^/$SHORTCODE" "$STATIC_FILE"; then
+    if grep -q "^/$SHORTCODE " "$STATIC_FILE"; then
       echo "Error: /$SHORTCODE is already taken in $STATIC_FILE."
       exit 1
     fi
