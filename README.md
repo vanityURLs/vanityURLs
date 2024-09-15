@@ -1,4 +1,4 @@
-![logo](doc/logo.png)
+![logo](logo.png)
 
 [![GitHub license](https://img.shields.io/github/license/bhdicaire/vanityURLs)](https://github.com/bhdicaire/vanityURLs/blob/main/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md) [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?color=ee8449&style=flat-square)](#contributors)
 
@@ -12,7 +12,7 @@ Features:
  * Advanced redirection with splats (e.g., /news/*  &#8594; /blog/:splat )
  * Continuous integration managed by Cloudflare Page Engine
 
-My objective is to work at the [command line](doc/administration.md) and automate it. So feel free to fork, and customize.
+My objective is to work at the command line and automate it. So feel free to fork, and customize.
 
 ## What problem does it solve and why is it useful?
 
@@ -24,15 +24,15 @@ This kind of solution is known as TinyURL, tiny url, shorten that long URL, URL 
 
 As long as you secure your Github and Cloudflare accounts with robust authentication, there is not much that can go wrong with such simple solution. It use the products as designed, there is no hack involved.
 
-Refer to [how does it work](doc/how.md) for more information.
+Refer to the [documentation](https://vanityurls.link/en/docs/guide/concept/#how-does-it-work) for more information.
 
 ## Setup
 
 1. Register a _tiny_ internet domain name with your [preferred vendor](https://www.cloudflare.com/en-ca/products/registrar/)
 2. If you don't own an a [Cloudflare subscription](https://dash.cloudflare.com/) already, you need to create a free account
 3. Add the _tiny_ internet domain name to [Cloudflare DNS](https://dash.cloudflare.com/)
-4. [Follow the instructions](doc/installation.md) to fork the GitHub repository and customize your setup
-5. Use the [`lnk` bash script](scripts/lnk) to shorten, personalize, and share fully branded short URLs with continuous integration on Cloudflare
+4. [Follow the instructions](https://vanityurls.link/en/docs/getting-started/) to fork the GitHub repository and customize your setup
+5. Use the [`lnk` bash script](https://vanityurls.link/en/docs/guide/advanced/cli/) to shorten, personalize, and share fully branded short URLs with continuous integration on Cloudflare
 
 ## Limitations
 
