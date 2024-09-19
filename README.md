@@ -24,8 +24,6 @@ This kind of solution is known as TinyURL, tiny url, shorten that long URL, URL 
 
 As long as you secure your Github and Cloudflare accounts with robust authentication, there is not much that can go wrong with such simple solution. It use the products as designed, there is no hack involved.
 
-Refer to the [documentation](https://vanityurls.link/en/docs/guide/concept/#how-does-it-work) for more information.
-
 ## Setup
 
 1. Register a _tiny_ internet domain name with your [preferred vendor](https://www.cloudflare.com/en-ca/products/registrar/)
@@ -47,7 +45,7 @@ Platform-wise, the `lnk` scripts require `bash` and so are not natively compatib
 
 ## Contributions
 
-[Contributions](doc/CONTRIBUTING.md) are welcome! We recognize [all types](https://allcontributors.org/docs/en/emoji-key) based on the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Please note that this project is released with a [Contributor Code of Conduct](doc/CODE-OF-CONDUCT.md). By participating in this project you agree to abide by its terms.
+[Contributions](.github/CONTRIBUTING.md) are welcome! We recognize [all types](https://allcontributors.org/docs/en/emoji-key) based on the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Please note that this project is released with a [Contributor Code of Conduct](.github/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -72,4 +70,4 @@ Platform-wise, the `lnk` scripts require `bash` and so are not natively compatib
  * [dnsConfiguration](https://github.com/bhdicaire/dnsConfiguration) – Automated DNS configuration with StackOverflow's DNSControl and Git
 
 ## Licence
-**vanityURLs** is Copyright 2023 Benoît H. Dicaire and [licensed under the MIT licence](https://github.com/bhdicaire/vanityURLs/blob/master/LICENCE).
+**vanityURLs** is Copyright 2023 Benoît H. Dicaire and [licensed under the MIT licence](https://github.com/vanityURLs/vanityURLs/blob/main/LICENSE).
